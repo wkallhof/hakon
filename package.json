@@ -1,0 +1,18 @@
+{
+  "name": "hakon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:core": "cd Hakon.Core && dotnet build",
+    "build:terminal": "cd Hakon.Terminal && dotnet build",
+    "build": "dotnet build Hakon.sln",
+
+    "test": "cd Hakon.Tests && dotnet test",
+    "test:watch": "cd Hakon.Tests && dotnet watch test",
+
+    "run:terminal": "cd Hakon.Terminal && dotnet run"
+  },
+  "author": "",
+  "license": "ISC"
+}
