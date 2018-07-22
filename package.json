@@ -9,9 +9,12 @@
     "build": "dotnet build Hakon.sln",
 
     "test": "cd Hakon.Tests && dotnet test",
-    "test:watch": "cd Hakon.Tests && dotnet watch test",
 
-    "run:terminal": "cd Hakon.Terminal && dotnet run"
+    "run:terminal": "cd Hakon.Terminal && dotnet run",
+    "run:web": "cd Hakon.Web && dotnet run",
+    
+    "watch:web": "cd Hakon.Web && dotnet watch run",
+    "watch:test": "cd Hakon.Tests && dotnet watch test"
   },
   "author": "",
   "license": "ISC"

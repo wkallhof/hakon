@@ -3,10 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using Hakon.Core.Brain.Cortex.ConceptNetwork;
 using Hakon.Core.Brain.Utilities;
+using Hakon.Core.Extensions;
 
 namespace Hakon.Core.Brain.Cortex
 {
-    public class ConceptNetworkCortex
+    public interface ICortex
+    {
+        void AddEntry(string entry);
+        CortexResponse GenerateResponse();
+        object GetState();
+    }
+
+    public class ConceptNetworkCortex : ICortex
     {
         private Network _network;
 
@@ -59,6 +67,14 @@ namespace Hakon.Core.Brain.Cortex
 
             var sentence = string.Join(" ", phraseNodes.Select(x => x.Label));
             return new CortexResponse() { Success = true, Message = sentence };
+        }
+
+        public object GetState(){
+            return new
+            {
+                Nodes = this._network.GetNodes(),
+                Links = this._network.GetLinks()
+            };
         }
 
         private List<Node> Generate(List<Node> phraseNodes, GenerateDirection direction){

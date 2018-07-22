@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Hakon.Core
+namespace Hakon.Core.Extensions
 {
     public static class StringExtensions
     {

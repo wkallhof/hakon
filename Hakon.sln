@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hakon.Terminal", "Hakon.Ter
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hakon.Tests", "Hakon.Tests\Hakon.Tests.csproj", "{AFC715EA-BBCA-4FE2-9D9F-6A0D87CD0136}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hakon.Web", "Hakon.Web\Hakon.Web.csproj", "{04D00352-1A6C-4F5C-8FDB-CD0404445D45}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,5 +60,17 @@ Global
 		{AFC715EA-BBCA-4FE2-9D9F-6A0D87CD0136}.Release|x64.Build.0 = Release|Any CPU
 		{AFC715EA-BBCA-4FE2-9D9F-6A0D87CD0136}.Release|x86.ActiveCfg = Release|Any CPU
 		{AFC715EA-BBCA-4FE2-9D9F-6A0D87CD0136}.Release|x86.Build.0 = Release|Any CPU
+		{04D00352-1A6C-4F5C-8FDB-CD0404445D45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04D00352-1A6C-4F5C-8FDB-CD0404445D45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04D00352-1A6C-4F5C-8FDB-CD0404445D45}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{04D00352-1A6C-4F5C-8FDB-CD0404445D45}.Debug|x64.Build.0 = Debug|Any CPU
+		{04D00352-1A6C-4F5C-8FDB-CD0404445D45}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{04D00352-1A6C-4F5C-8FDB-CD0404445D45}.Debug|x86.Build.0 = Debug|Any CPU
+		{04D00352-1A6C-4F5C-8FDB-CD0404445D45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04D00352-1A6C-4F5C-8FDB-CD0404445D45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04D00352-1A6C-4F5C-8FDB-CD0404445D45}.Release|x64.ActiveCfg = Release|Any CPU
+		{04D00352-1A6C-4F5C-8FDB-CD0404445D45}.Release|x64.Build.0 = Release|Any CPU
+		{04D00352-1A6C-4F5C-8FDB-CD0404445D45}.Release|x86.ActiveCfg = Release|Any CPU
+		{04D00352-1A6C-4F5C-8FDB-CD0404445D45}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
