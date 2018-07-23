@@ -26,10 +26,9 @@ class ChatController extends Stimulus.Controller {
             console.log("Error processing text: "+response.error);
             return;
         }
-
-        console.log(response);
         this.inputTarget.value = "";
         this.addToChatLog("Hakon", response.data);
+        this.reloadGraph();
     }
 
     addToChatLog(source, message) {
@@ -40,5 +39,14 @@ class ChatController extends Stimulus.Controller {
     onRequestFailure(data) {
         console.log("Request Failed");
         console.log(data);
+    }
+
+    reloadGraph() {
+        this.graphController.update()
+    }
+    
+    get graphController() {
+        let element = w.first("section[data-controller='graph']");
+        return this.application.getControllerForElementAndIdentifier(element, "graph");
     }
 }

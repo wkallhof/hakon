@@ -1,14 +1,50 @@
-.chat-form textarea{
-    display:block;
+body *{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: white;
+    margin: 0px;
+}
+
+.graph{
+    width: 100%;
+    height: 100%;
+}
+
+.chat{
     width: 50%;
+    position: fixed;
+    left: 50%;
+    bottom: 10px;
+    transform: translate(-50%);
+    margin: 0 auto;
+}
+
+.chat-form textarea{
+    display: block;
+    width: 100%;
     height: 200px;
+    background-color: rgba(10,10,10,0.8);
+    border: 1px solid #464646;
+    border: none;
+    line-height: 24px;
+    padding: 10px;
 }
 
 .chat-form input[type=text]{
-    margin: 10px;
-    width: 25%;
+    width: 90%;
+    line-height: 25px;
+    border: 1px solid #464646;
+    background-color: rgba(10,10,10,0.8);
+    margin-top: 12px;
+    padding-left: 10px;
 }
 
 .chat-form input[type=submit]{
-    
+    background-color: rgba(10,10,10,0.8);
+    width: 7%;
+    line-height: 24px;
+    font-size: 12px;
+    border: 1px solid #464646;
+    background-color: rgba(10,10,10,0.8);
 }

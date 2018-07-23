@@ -5,14 +5,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>@ViewData["Title"] - Hakon.Web</title>
 
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
         <link rel="stylesheet" href="/css/site.css">
 
-        <!-- Stimulus JS -->
-        <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js" defer></script>
+        <!-- Vendor -->
+        <script src="/js/vendor/vendor.js" defer></script>
+        <script src="/js/vendor/arbor.js" defer></script>
 
+        <!-- Utility -->
         <script src="/js/w.js"  asp-append-version="true" defer></script>
-        <script src="/js/controllers/chat.controller.js"  asp-append-version="true" defer></script>
-        <script src="/js/controllers/graph.controller.js" asp-append-version="true" defer></script>
+
+        <!-- Chat Feature -->
+        <script src="/js/features/chat/chat.controller.js"  asp-append-version="true" defer></script>
+
+        <!-- Graph Feature -->
+        <script src="/js/features/graph/graph.renderer.js" asp-append-version="true" defer></script>
+        <script src="/js/features/graph/graph.manager.js" asp-append-version="true" defer></script>
+        <script src="/js/features/graph/graph.controller.js" asp-append-version="true" defer></script>
 
         <script src="/js/app.js" asp-append-version="true" defer></script>
     </head>
