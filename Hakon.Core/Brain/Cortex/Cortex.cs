@@ -54,7 +54,7 @@ namespace Hakon.Core.Brain.Cortex
         }
 
         public CortexResponse GenerateResponse(){
-            this._network.Propagate(decay:80);
+            this._network.Propagate();
 
             var maxWordValue = this._network.GetMaximumActivationValue(NodeClassification.Word);
             var activatedWordNodes = this._network.GetActivatedNodes(NodeClassification.Word, (maxWordValue - 10.0));

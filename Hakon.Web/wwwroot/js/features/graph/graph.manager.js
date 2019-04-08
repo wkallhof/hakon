@@ -14,7 +14,13 @@ class GraphManager{
     init() {
         // create the particle system
         // this._ps = arbor.ParticleSystem(2000, 600, 0.5);
-        this._ps = arbor.ParticleSystem(500, 500, 0.5);
+        this._ps = arbor.ParticleSystem({
+            repulsion: 300,
+            stiffness: 100,
+            friction: 0.8,
+            gravity: false,
+            precision: 0.1
+        });
         this._ps.parameters({ gravity: true });
 
         // set the particle systems renderer to the same methods

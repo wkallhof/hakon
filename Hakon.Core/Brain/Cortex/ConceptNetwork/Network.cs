@@ -188,7 +188,7 @@ namespace Hakon.Core.Brain.Cortex.ConceptNetwork
             else{
                 var influence = node.InfluenceValue.Value;
                 influence /= Math.Log(NORMAL_NUMBER_COMING_LINKS + node.InfluenceNumber.Value) / Math.Log(NORMAL_NUMBER_COMING_LINKS);
-                newActivationValue = node.OldActivationValue - decay * node.OldActivationValue / 100 + influence - minusAge;
+                newActivationValue = node.OldActivationValue - decay; //* node.OldActivationValue / 100 + influence - minusAge;
             }
 
             newActivationValue = Math.Max(newActivationValue, 0);

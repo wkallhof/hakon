@@ -1,12 +1,13 @@
 REN = {
     NODE_WIDTH: 10,
     MOUSE_DISTANCE: 15,
-    BACKGROUND_COLOR: "rgb(33,33,33)",
-    LINK_COLOR: "rgba(255,242,126, .8)",
+    BACKGROUND_COLOR: "rgb(20,20,20)",
+    LINK_COLOR: "rgba(255,255,255, .8)",
     FONT_COLOR: "white",
     FONT_STYLE: "12px Roboto",
     FONT_WEIGHT: "300",
-    NODE_COLOR: (alpha) => `rgba(255,242,126,${alpha})`
+    NODE_COLOR: (alpha) => `rgba(255,255,255,${alpha})`,
+    NODE_COLOR_ACTIVE: (alpha) => `rgba(224,84,84,${alpha})`
 }
 
 class GraphRenderer {
@@ -83,12 +84,12 @@ class GraphRenderer {
     * Handles drawing each edge in the graph
     */ 
     drawEdge(edge, pt1, pt2) {
-        let fromNodeAct = this.getActivationAlpha(edge.source)
-        let toNodeAct = this.getActivationAlpha(edge.target);
+        // let fromNodeAct = this.getActivationAlpha(edge.source)
+        // let toNodeAct = this.getActivationAlpha(edge.target);
 
         let gradient = this._ctx.createLinearGradient(pt1.x, pt1.y, pt2.x, pt2.y);
-        gradient.addColorStop(0, REN.NODE_COLOR(fromNodeAct));
-        gradient.addColorStop(1, REN.NODE_COLOR(toNodeAct));
+        gradient.addColorStop(0, this.getNodeColor(edge.source));
+        gradient.addColorStop(1, this.getNodeColor(edge.target));
 
         //this._ctx.strokeStyle = REN.LINK_COLOR;
         this._ctx.strokeStyle = gradient;
@@ -115,9 +116,9 @@ class GraphRenderer {
         this._ctx.arc(pt.x, pt.y, activation * 10, 0, 2*Math.PI);
         // this._ctx.strokeStyle = REN.NODE_COLOR(activation);
         // this._ctx.stroke();
-        this._ctx.shadowColor = REN.NODE_COLOR(activation * 20);
+        this._ctx.shadowColor = this.getNodeColor(node, activation * 20);
         this._ctx.shadowBlur = activation * 20;
-        this._ctx.fillStyle = REN.NODE_COLOR(activation);
+        this._ctx.fillStyle = this.getNodeColor(node, activation);
         this._ctx.fill();
         this._ctx.shadowBlur = 0;
     }
@@ -159,5 +160,11 @@ class GraphRenderer {
 
     getActivationAlpha(node) {
         return Math.max(node.data.activationValue / 100, 0.1);
+    }
+
+    getNodeColor(node, alpha) {
+        alpha = alpha != null ? alpha : this.getActivationAlpha(node);
+        var color = node.data.activationValue > 55 ? REN.NODE_COLOR_ACTIVE(alpha) : REN.NODE_COLOR(alpha);
+        return color;
     }
 }
